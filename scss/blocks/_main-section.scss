@@ -1,0 +1,102 @@
+.main-screen {
+	position: relative;
+	margin-bottom: 10rem;
+
+	&::before {
+		position: absolute;
+		content: '';
+		display: block;
+		max-width: 109rem;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		background: $purpleGrad;
+		opacity: 0.05;
+		z-index: -1;
+		border-radius: 0 2rem 2rem 0;
+	}
+
+	padding: 13.4rem 0 9.4rem 0;
+
+	&__container {}
+
+	&__title {
+		letter-spacing: -1px;
+		@include text($ffAdd, 700, 6rem, 6.8rem, $darkBlue);
+		max-width: 53.7rem;
+		margin-bottom: 2rem;
+	}
+
+	&__desc {
+		@include text($ffMain, 400, 2rem, 3rem, $darkGreyBlue);
+		max-width: 56rem;
+		margin-bottom: 4rem;
+	}
+
+	&__img {
+		display: inline-block;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+
+		@include desktop-small {
+			margin-bottom: 5rem;
+			width: 100%;
+		}
+
+		.video {
+			width: 59rem;
+			height: 36rem;
+			background: #001A49;
+			box-shadow: 0 3.2rem 4.4rem #818A8C;
+			border-radius: 2rem 0 0 2rem;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			@include desktop-small {
+				border-radius: $radius;
+				width: 100%;
+			}
+		}
+
+		@include desktop-small {
+			position: static;
+			transform: none;
+		}
+	}
+
+	&__btn {
+		margin-bottom: 10rem;
+	}
+
+	&__students {}
+}
+
+.students {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+
+	&__list {
+		display: flex;
+		align-items: center;
+
+		img {
+			&:not(:first-child) {
+				margin-left: -2rem;
+			}
+		}
+	}
+
+	&__text {
+		@include text($ffMain, 400, 1.6rem, 2rem, $darkGreyBlue);
+
+		span {
+			color: $purple;
+		}
+	}
+}

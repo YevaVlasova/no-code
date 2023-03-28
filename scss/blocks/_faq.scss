@@ -1,0 +1,35 @@
+.faq {
+	margin-bottom: 12rem;
+	&__container {
+		padding: 0 15.5rem;
+		@include tablet {
+			padding: 0 2rem;
+		}
+	}
+
+	&__title {
+		@include text($ffAdd, 700, 4.6rem, 5.6rem, $darkBlue);
+		text-align: center;
+		margin-bottom: 5.1rem;
+	}
+
+	&__list {
+		display: grid;
+		gap: 2rem;
+	}
+
+}
+
+.accordion {
+	&__header {
+		padding: 4rem;
+	}
+
+	&__title {
+		@include text($ffAdd, 700, 2rem, 2.4rem, $darkBlue);
+	}
+
+	&__description {
+		@include text($ffMain, 400, 1.6rem, 2.6rem, $darkGreyBlue);
+	}
+}

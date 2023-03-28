@@ -1,0 +1,56 @@
+.slider-section {
+    background: $purpleGrad;
+    padding: 12rem 16rem;
+    margin-bottom: 15rem;
+
+    &__title {
+        @include text($ffAdd, 700, 4.6rem, 5.6rem, $white);
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &__desc {
+        @include text($ffMain, 400, 2rem, 3rem, $white);
+        text-align: center;
+        mix-blend-mode: normal;
+        opacity: 0.8;
+        margin-bottom: 10rem;
+        max-width: 56rem;
+        margin-inline: auto;
+    }
+}
+.item {
+    background: rgba(76, 0, 112, 0.195968);
+    border-radius: 2rem;
+    padding: 5rem 4rem 4rem 5rem;
+    max-width: 55rem;
+}
+.item-text {
+    @include text($ffMain, 400, 2rem, 3rem, $white);
+    max-width: 46rem;
+    margin-bottom: 3rem;
+}
+.item-person {
+    display: flex;
+    align-items: center;
+    max-width: 19.6rem;
+    gap: 1.4rem;
+
+    &__pic img {
+        max-width: 100%;
+    }
+
+    &__info {
+    }
+
+    &__title {
+        @include text($ffMain, 700, 1.6rem, 2rem, $white);
+        margin-bottom: 0.4rem;
+    }
+
+    &__desc {
+        @include text($ffMain, 400, 1.6rem, 2rem, $white);
+        mix-blend-mode: normal;
+        opacity: 0.8;
+    }
+}
