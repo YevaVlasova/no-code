@@ -6,13 +6,32 @@
     align-items: center;
 
     &__desc {
-        @include text($ffAdd, 700, 1.2rem, 1.5rem, $purpleGrad);
+        @include text($ffAdd, 700, 1.2rem, 1.5rem, null);
         text-align: center;
+        align-items: center;
         letter-spacing: 2.57143px;
         text-transform: uppercase;
         background-clip: text;
+        background: $purpleGrad;
+        position: relative;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-fill-color: transparent;
+        &::before {
+            background: linear-gradient(90deg, #FFD7A9 0%, #FFAE70 100%);
+            opacity: 0.2;
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: $radiusRound;
+            padding: 0.8rem 3.4rem;
+            width: 40.2rem;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
         
-        background: linear-gradient(90deg, #FFD7A9 0%, #FFAE70 100%);
         mix-blend-mode: normal;
         border-radius: $radiusRound;
         padding: 0.8rem 3.4rem;
@@ -25,5 +44,27 @@
         text-align: center;
         max-width: 65rem;
         margin-bottom: 3rem;
+        position: relative;
+    }
+    &__circle {
+        background: $purpleGrad;
+        border-radius: $radiusImage;
+        width: 43.2rem;
+        height: 43.2rem;
+        position: absolute;
+        right: -27.8rem;
+        top: 489rem;
+        overflow-y: hidden;
+        z-index: -4;
+    }
+    &__circle-small {
+        background: $orangeGrad;
+        border-radius: $radiusImage;
+        width: 12.3rem;
+        height: 12.3rem;
+        position: absolute;
+        right: 3.1rem;
+        top: 489rem;
+        z-index: -3;
     }
 }

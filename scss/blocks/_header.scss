@@ -37,6 +37,7 @@
 			align-items: center;
 			transition: $transition;
 			transform: translateX(-120%);
+			z-index: 1000000;
 			.btn._primary {
 				background: transparent;
 				border: 0.2rem solid $white;
@@ -53,7 +54,7 @@
 
 			.icon-close {
 				position: absolute;
-				top: 2rem;
+				top: 4rem;
 				right: 2rem;
 			}
 		}

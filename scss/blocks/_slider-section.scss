@@ -2,6 +2,15 @@
     background: $purpleGrad;
     padding: 12rem 16rem;
     margin-bottom: 15rem;
+    @include desktop-small {
+        padding: 10rem 8rem;
+    }
+    @include tablet {
+        padding: 8rem 5rem;
+    }
+    @include tablet-small {
+        padding: 5rem 3rem;
+    }
 
     &__title {
         @include text($ffAdd, 700, 4.6rem, 5.6rem, $white);
@@ -17,6 +26,9 @@
         margin-bottom: 10rem;
         max-width: 56rem;
         margin-inline: auto;
+        @include tablet-small {
+            margin-bottom: 3rem;
+        }
     }
 }
 .item {

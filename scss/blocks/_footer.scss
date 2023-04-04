@@ -8,22 +8,30 @@
 		position: absolute;
 		width: 100%;
 		height: 100%;
+        z-index: -1;
 	}
 }
 .footer-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 6.3rem 0;
-    
-		&__logo {
+    padding-top: 6.3rem;
+    margin-bottom: 5rem;
+    @include desktop-small {
+        flex-direction: column;
+        gap: 2rem;
+    }
+		img {
+            @include desktop-small {
+                margin-bottom: 3rem;
+            }
+            
 		}
 
 		&__email {
             display: block;
             align-items: center;
             margin-inline: auto;
-            margin-bottom: 5rem;
 		}
 }
 .email {
@@ -34,7 +42,13 @@
     display: flex;
     align-items: center;
     padding-right: 0.8rem;
-    margin-bottom: 5rem;
+    @include desktop-small {
+        background: transparent;
+        box-shadow: none;
+        display: block;
+        margin-inline: auto;
+        padding-right: 0;
+    }
 
     &__input {
         border-radius: $radiusRound;
@@ -45,5 +59,48 @@
         outline: 0;
         @include text($ffMain, 400, 1.6rem, 2rem, $darkGreyBlue);
         opacity: 0.5;
+        @include desktop-small {
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.0501257);
+            margin-bottom: 3rem;
+        }
+        @include tablet {
+            max-width: 60rem;
+        }
     }
+}
+
+.footer-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-height: 18rem;
+    flex-grow: 1;
+   // grid-template-columns: repeat(auto-fill, minmax(18.7rem, 1fr));
+    gap: 10rem;
+    max-width: 63.6rem;
+    margin-bottom: 8rem;
+
+    &__list {
+
+    }
+
+    &__list-title {
+        @include text($ffMain, 700, 1.6rem, 2rem, $darkBlue);
+        margin-bottom: 2rem;
+    }
+
+    &__list-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.footer-ul {
+}
+.footer-li {
+    margin-bottom: 2rem;
+}
+.footer-a {
+    @include text($ffMain, 400, 1.6rem, 2rem, $darkGreyBlue);
+    
 }

@@ -9,16 +9,58 @@
         background: $white;
         border: 1px solid $border;
         border-radius: $radius;
-        padding: 5rem 13.6rem 5rem 12.5rem;
+        padding: 3rem 0 3rem 0;
         margin-bottom: 16.5rem;
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 5rem auto 5rem auto;
+        }
+    }
+    &__circle {
+        background: $purpleGrad;
+        border-radius: $radiusImage;
+        width: 28.8rem;
+        height: 28.8rem;
+        z-index: -1;
+        overflow-y: hidden;
+        position: relative;
+        left: -8.3rem;
+        top: 30rem;        
+    }
+    &__circle-small {
+        background: $orangeGrad;
+        border-radius: $radiusImage;
+        width: 8.6rem;
+        height: 8.6rem;
+        z-index: 0;
+        position: absolute;
+        left: 8.3rem;
+        top: 142rem; 
     }
 
     &__header-item {
-        & h3 {
+        flex: 1 1 33.3%;
+        border-right: 0.1rem solid $border;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        @include mobile {
+            border-right: none;
+            border-bottom: 0.1rem solid $border;
+            &:not(:last-child) {
+                border-bottom: 0.1rem solid $border;
+            }
+        }
+        &:not(:last-child) {
+            border-right: 0.1rem solid $border;
+        }
+        h3 {
             @include text($ffAdd, 700, 4rem, 5rem, $darkBlue);
             text-align: center;
+            margin-bottom: 0.2rem;
         }
-        & h4 {
+        h4 {
             @include text($ffMain, 400, 1.6rem, 2rem, $darkGreyBlue);
             text-align: center;
         }
@@ -28,11 +70,29 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(112rem, 1fr));
 	    gap: 30px;
+        position: relative;
+        @include desktop-small {
+            grid-template-columns: repeat(auto-fill, minmax(99rem, 1fr));
+        }
+        @include tablet {
+            grid-template-columns: repeat(auto-fill, minmax(76rem, 1fr));
+        }
+    }
+    &__circle-orange {
+        background: $orangeGrad;
+        border-radius: $radiusImage;
+        width: 38.3rem;
+        height: 38.3rem;
+        z-index: -9;
+        position: absolute;
+        right: -24.9rem;
+        top: -35.1rem;
+        overflow-y: hidden;
     }
 
     &__block {
         display: flex;
-        justify-content: space-between;
+        gap: 2rem;
         align-items: center;
         padding: 3.9rem 5.4rem 4.1rem 4.6rem;
         position: relative;
@@ -47,7 +107,13 @@
 			height: 100%;
             padding: 3.9rem 5.4rem 4.1rem 4.6rem;
 			border-radius: $radius;
+            left: 0;
+            z-index: -1;
 		}
+        @include desktop-small {
+            max-width: 99.2rem;
+            margin-inline: auto;
+        }
     }
 
     &__icon {
@@ -63,6 +129,13 @@
             top: 50%;
             transform: translate(-50%, -50%);
         }
+    }
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-grow: 1;
+        gap: 2rem;
     }
 
     &__content {
@@ -82,7 +155,23 @@
     }
 
     &__link {
+        max-width: 27.8rem;
         display: flex;
+        justify-content: space-between;
         align-items: center;
+        padding: 1.8rem 0 1.8rem 0;
+        @include tablet {
+        }
     }
+
+    &__link-border {
+        flex: 1 1 50%;
+        border-right: 0.1rem solid $purple-semi;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        &:not(:last-child) {
+            border-right: 0.1rem solid $purple-semi;
+        }
+    }
+
 }
